@@ -22,7 +22,8 @@
         .btn-app { background: var(--negro); font-size: 0.85rem; }
         .btn-web { background: #fff; color: var(--azul); border: 2px solid var(--azul); box-shadow: none; margin-top: 20px; }
         .btn-vcard { background: #eee; color: #444; box-shadow: none; border: 1px solid #ccc; font-size: 0.9rem; margin-top: 10px; }
-        
+        .btn-pdf { background: #6c757d; color: white; margin-top: 10px; font-size: 0.9rem; }
+        .btn-pdf .icono { font-size: 1.1rem; }
         .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .icono { margin-right: 10px; font-size: 1.3rem; }
         .seccion-titulo { font-size: 0.8rem; text-transform: uppercase; color: #888; margin: 15px 0 8px 0; font-weight: bold; letter-spacing: 1px; }
@@ -77,7 +78,7 @@
         <span class="icono">💬</span> PEDIR POR WHATSAPP
     </a>
 
-    <div class="seccion-titulo">Nuestra App Pidetaxi</div>
+    <div class="seccion-titulo">App Pidetaxi</div>
     <div class="app-grid">
         <a href="https://play.google.com/store/apps/details?id=es.sooft.pidetaxi&hl=es" class="btn btn-app">
             <span class="icono">🤖</span> ANDROID
@@ -96,8 +97,12 @@
         <span class="icono">👤</span> GUARDAR EN CONTACTOS
     </a>
 
+    <a href="tarifas-oficiales-alicante.pdf" download class="btn btn-pdf">
+        <span class="icono">📄</span> DESCARGAR TARIFAS OFICIALES (PDF)
+    </a>
+
     <div class="footer">
-        © <span id="year"></span> Taxi Alicante - Licencia Municipal - Web Independiente.<br>
+        © <span id="year"></span> Taxi Alicante - Web Independiente.<br>
         Servicio de Taxi en la Ciudad de Alicante.
     </div>
 </div>

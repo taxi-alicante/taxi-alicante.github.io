@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Service in Alicante</title>
+    <style>
+        :root { --azul: #0056b3; --verde: #25D366; --negro: #222; --amarillo: #ffcc00; }
+        html { scroll-behavior: smooth; }
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; text-align: center; background: #ffffff; color: #333; line-height: 1.5; }
+        header { background: var(--azul); color: white; padding: 2.5rem 1rem; border-bottom: 6px solid var(--amarillo); position: relative; }
+        .container { padding: 20px; max-width: 450px; margin: auto; }
+        
+        .ventajas { text-align: left; background: #f0f4f8; padding: 20px; border-radius: 15px; margin-bottom: 25px; border: 1px solid #d1d9e0; }
+        .ventajas h2 { font-size: 1.1rem; margin-top: 0; color: var(--azul); text-transform: uppercase; letter-spacing: 1px; }
+        .item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 0.95rem; }
+        .check { color: var(--azul); margin-right: 10px; font-weight: bold; }
+
+        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; margin-bottom: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.2s; }
+        .btn-tel { background: var(--azul); }
+        .btn-ws { background: var(--verde); }
+        .btn-app { background: var(--negro); font-size: 0.85rem; }
+        .btn-web { background: #fff; color: var(--azul); border: 2px solid var(--azul); box-shadow: none; margin-top: 20px; }
+        .btn-vcard { background: #eee; color: #444; box-shadow: none; border: 1px solid #ccc; font-size: 0.9rem; margin-top: 10px; }
+        .btn-pdf { background: #6c757d; color: white; margin-top: 10px; font-size: 0.9rem; }
+        .btn-pdf .icono { font-size: 1.1rem; }
+        .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .icono { margin-right: 10px; font-size: 1.3rem; }
+        .seccion-titulo { font-size: 0.8rem; text-transform: uppercase; color: #888; margin: 15px 0 8px 0; font-weight: bold; letter-spacing: 1px; }
+
+        #btn-subir {
+            position: fixed; bottom: 25px; right: 25px; background: var(--azul); color: white;
+            width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; text-decoration: none; font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 100; border: 2px solid white;
+            opacity: 0; visibility: hidden; transition: 0.3s;
+        }
+
+        #btn-subir.mostrar { opacity: 1; visibility: visible; }
+
+        .footer { font-size: 0.7rem; color: #999; margin-top: 40px; padding-bottom: 80px; }
+
+        .idioma-float {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            line-height: 1;
+        }
+        
+    </style>
+
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+</head>
+<body>
+
+<header id="inicio" style="position: relative;">
+    <a href="index.html" class="idioma-float" title="Cambiar a Español">🇪🇸</a>
+    <div style="font-size: 3rem;">🚕</div>
+    <h1>Taxi in Alicante</h1>
+    <p>Guarantee, Safety & Professionalism</p>
+</header>
+
+<div class="container">
+    <div class="ventajas">
+        <h2>Official Taxi Advantages</h2>
+        <div class="item"><span class="check">✓</span> <span><b>Regulated Rates:</b> Official prices approved by the Department of Transport.</span></div>
+        <div class="item"><span class="check">✓</span> <span><b>Speed:</b> Exclusive access to Bus/Taxi lanes.</span></div>
+        <div class="item"><span class="check">✓</span> <span><b>Safety:</b> Identified professional drivers.</span></div>
+        <div class="item"><span class="check">✓</span> <span><b>Availability:</b> 24-hour service every day.</span></div>
+    </div>
+
+    <div class="seccion-titulo">Direct Booking</div>
+    <a href="tel:+34965252511" class="btn btn-tel">
+        <span class="icono">📞</span> CALL +34 965 252 511
+    </a>
+
+    <a href="https://wa.me/34965252511?text=Hello,%20I%20need%20a%20taxi" class="btn btn-ws">
+        <span class="icono">💬</span> ORDER VIA WHATSAPP
+    </a>
+
+    <div class="seccion-titulo">PIDETAXI APP</div>
+    <div class="app-grid">
+        <a href="https://play.google.com/store/apps/details?id=es.sooft.pidetaxi&hl=es" class="btn btn-app">
+            <span class="icono">🤖</span> ANDROID
+        </a>
+        <a href="https://apps.apple.com/es/app/pidetaxi-pedir-taxi-en-espa%C3%B1a/id737441460" class="btn btn-app">
+            <span class="icono">🍎</span> IPHONE
+        </a>
+    </div>
+
+    <div class="seccion-titulo">More Information</div>
+    <a href="https://taxienalicante.com/" target="_blank" class="btn btn-web">
+        <span class="icono">🌐</span> OFFICIAL WEBSITE (Taxi Ranks & Services)
+    </a>
+
+    <a href="radioteletaxi.vcf" class="btn btn-vcard">
+        <span class="icono">👤</span> SAVE TO CONTACTS
+    </a>
+
+    <a href="tarifas-oficiales-alicante.pdf" download class="btn btn-pdf">
+        <span class="icono">📄</span> DOWNLOAD OFFICIAL RATES (PDF)
+    </a>
+
+    <div class="footer">
+        © <span id="year"></span> Taxi Alicante - Independent Web.<br>
+        <a href="legal_en.html" style="color: #999; text-decoration: none; border-bottom: 1px solid #ccc;">Legal Notice & Privacy</a>
+    </div>
+</div>
+
+<a href="#inicio" id="btn-subir" title="Subir">↑</a>
+
+<script>
+    const btnSubir = document.getElementById("btn-subir");
+
+    // Función para el botón de subir
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btnSubir.classList.add("mostrar");
+        } else {
+            btnSubir.classList.remove("mostrar");
+        }
+    };
+
+    // Función para poner el año actual automáticamente
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

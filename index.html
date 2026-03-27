@@ -8,7 +8,7 @@
         :root { --azul: #0056b3; --verde: #25D366; --negro: #222; --amarillo: #ffcc00; }
         html { scroll-behavior: smooth; }
         body { font-family: system-ui, -apple-system, sans-serif; margin: 0; text-align: center; background: #ffffff; color: #333; line-height: 1.5; }
-        header { background: var(--azul); color: white; padding: 2.5rem 1rem; border-bottom: 6px solid var(--amarillo); }
+        header { background: var(--azul); color: white; padding: 2.5rem 1rem; border-bottom: 6px solid var(--amarillo); position: relative; }
         .container { padding: 20px; max-width: 450px; margin: auto; }
         
         .ventajas { text-align: left; background: #f0f4f8; padding: 20px; border-radius: 15px; margin-bottom: 25px; border: 1px solid #d1d9e0; }
@@ -39,6 +39,19 @@
         #btn-subir.mostrar { opacity: 1; visibility: visible; }
 
         .footer { font-size: 0.7rem; color: #999; margin-top: 40px; padding-bottom: 80px; }
+
+        .idioma-float {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            line-height: 1;
+        }
         
     </style>
 

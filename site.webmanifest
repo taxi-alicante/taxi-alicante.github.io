@@ -1,6 +1,6 @@
 {
-  "name": "Taxi Alicante Oficial",
-  "short_name": "Taxi Alicante",
+  "name": "Alicante Taxi",
+  "short_name": "Alicante Taxi",
   "description": "Servicio Oficial de Taxi en Alicante. Tarifas reguladas y reserva directa.",
   "start_url": "/index.html",
   "display": "standalone",

@@ -18,18 +18,7 @@
 
         #btn-subir.mostrar { opacity: 1; visibility: visible; }
     </style>
-    <script>
-        const btnSubir = document.getElementById('btn-subir');
-
-        window.onscroll = function() {
-            // Si el usuario baja más de 300px, aparece el botón
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                btnSubir.classList.add('mostrar');
-            } else {
-                btnSubir.classList.remove('mostrar');
-            }
-        };
-</script>
+    
 </head>
 <body>
     <a href="index.html" class="atras">← Volver</a>
@@ -45,5 +34,17 @@
 
     <p><b>5. Exención de Responsabilidad:</b> El titular de esta web no se hace responsable de las incidencias que puedan surgir durante la prestación del servicio de transporte, el cual se rige por la normativa municipal y autonómica vigente.</p> 
     <a href="#inicio" id="btn-subir" title="Subir">↑</a>
+    <script>
+        const btnSubir = document.getElementById('btn-subir');
+
+        window.onscroll = function() {
+            // Si el usuario baja más de 300px, aparece el botón
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btnSubir.classList.add('mostrar');
+            } else {
+                btnSubir.classList.remove('mostrar');
+            }
+        };
+    </script>
 </body>
 </html>

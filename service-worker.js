@@ -1,4 +1,4 @@
-const CACHE_NAME = 'taxi-alicante-v1';
+const CACHE_NAME = 'taxi-alicante-v2';
 
 const urlsToCache = [
   '/',

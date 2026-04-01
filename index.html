@@ -143,6 +143,10 @@
 
     // Función para poner el año actual automáticamente
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js');
+    }
 </script>
 
 </body>

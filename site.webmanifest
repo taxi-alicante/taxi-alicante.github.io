@@ -6,6 +6,8 @@
   "display": "standalone",
   "background_color": "#0056b3",
   "theme_color": "#0056b3",
+  "edge_to_edge": true,
+  "orientation": "portrait",
   "icons": [
     {
       "src": "android-chrome-192x192.png",

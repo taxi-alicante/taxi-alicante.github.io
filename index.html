@@ -156,7 +156,6 @@
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    <script>
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js', { scope: '/' })
@@ -164,7 +163,6 @@
                 .catch(err => console.error('Error al registrar SW Raíz:', err));
         });
     }
-</script>
 </script>
 
 </body>

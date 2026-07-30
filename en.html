@@ -149,9 +149,15 @@
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js', { scope: '/' });
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' })
+                .then(reg => console.log('SW Raíz registrado:', reg.scope))
+                .catch(err => console.error('Error al registrar SW Raíz:', err));
+        });
     }
+</script>
 </script>
 
 </body>

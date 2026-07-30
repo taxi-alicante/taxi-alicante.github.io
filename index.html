@@ -97,6 +97,27 @@
             color: white;
         }
 
+        .btn-volver-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px;
+            margin-top: 25px;
+            background-color: #f4f4f4;
+            color: #444444;
+            border: 1px solid #cccccc;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-volver-menu:active {
+            background-color: #e0e0e0;
+        }
+        
         .footer { font-size: 0.75rem; color: #999; margin-top: 40px; padding-bottom: 40px; }
     </style>
 
@@ -140,6 +161,11 @@
         </span>
     </a>
 
+    <!-- BOTÓN NAVEGACIÓN A MENÚ PRINCIPAL -->
+    <a href="https://taxi-alicante.github.io/" class="btn-volver-menu">
+        <span class="icono">🏠</span> VOLVER AL MENÚ PRINCIPAL
+    </a>
+    
     <div class="footer">
         © <span id="year"></span> Taxi Alicante - Web Independiente<br>
     </div>

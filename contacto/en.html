@@ -171,7 +171,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js');
+        navigator.serviceWorker.register('/contacto/service-worker.js', { scope: '/contacto/' });
     }
 </script>
 

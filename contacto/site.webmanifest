@@ -1,10 +1,10 @@
 {
-  "id": "/",
+  "id": "/contacto/",
   "name": "Alicante Taxi - Reservas",
   "short_name": "Taxi Reservas",
   "description": "Servicio Oficial de Taxi en Alicante. Tarifas reguladas y reserva directa.",
-  "start_url": "/",
-  "scope":"/",
+  "start_url": "/contacto/",
+  "scope":"/contacto/",
   "display": "standalone",
   "background_color": "#0056b3",
   "theme_color": "#0056b3",

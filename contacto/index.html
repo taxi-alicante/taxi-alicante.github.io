@@ -176,7 +176,11 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/contacto/service-worker.js', { scope: '/contacto/' });
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/contacto/service-worker.js', { scope: '/contacto/' })
+                .then(reg => console.log('Service Worker registrado:', reg.scope))
+                .catch(err => console.error('Error al registrar Service Worker:', err));
+        });
     }
 </script>
 

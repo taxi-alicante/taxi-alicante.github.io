@@ -1,25 +1,25 @@
 const CACHE_NAME = 'taxi-alicante-contacto-v1';
 
 const urlsToCache = [
-  './',
-  './index.html',
-  './en.html',
-  './legal.html',
-  './legal_en.html',
-  './site.webmanifest',
+  '/contacto/',
+  '/contacto/index.html',
+  '/contacto/en.html',
+  '/contacto/legal.html',
+  '/contacto/legal_en.html',
+  '/contacto/site.webmanifest',
 
-  './android-chrome-192x192.png',
-  './android-chrome-512x512.png',
-  './apple-touch-icon.png',
+  '/contacto/android-chrome-192x192.png',
+  '/contacto/android-chrome-512x512.png',
+  '/contacto/apple-touch-icon.png',
 
-  './favicon.ico',
-  './favicon-32x32.png',
-  './favicon-16x16.png',
+  '/contacto/favicon.ico',
+  '/contacto/favicon-32x32.png',
+  '/contacto/favicon-16x16.png',
 
-  './radioteletaxi.vcf',
-  './radioteletaxi_en.vcf',
+  '/contacto/radioteletaxi.vcf',
+  '/contacto/radioteletaxi_en.vcf',
 
-  './tarifas-oficiales-alicante.pdf'
+  '/contacto/tarifas-oficiales-alicante.pdf'
 ];
 
 // INSTALACIÓN
@@ -71,7 +71,7 @@ self.addEventListener('fetch', event => {
         .catch(() => {
           // Fallback a la index de contacto si falla la navegación estando offline
           if (request.mode === 'navigate') {
-            return caches.match('./index.html');
+            return caches.match('/contacto/index.html');
           }
           return cachedResponse;
         });

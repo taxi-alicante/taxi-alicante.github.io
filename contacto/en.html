@@ -55,6 +55,27 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             line-height: 1;
         }
+
+        .btn-volver-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px;
+            margin-top: 25px;
+            background-color: #f4f4f4;
+            color: #444444;
+            border: 1px solid #cccccc;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-volver-menu:active {
+            background-color: #e0e0e0;
+        }
         
     </style>
 
@@ -120,8 +141,13 @@
         <span class="icono">📄</span> DOWNLOAD OFFICIAL RATES (PDF)
     </a>
 
+    <!-- NAVIGATION BUTTON TO MAIN MENU -->
+    <a href="https://taxi-alicante.github.io/en.html" class="btn-volver-menu">
+        <span class="icono">🏠</span> BACK TO MAIN MENU
+    </a>
+    
     <div class="footer">
-        © <span id="year"></span> Taxi Alicante - Independent Web.<br>
+        © <span id="year"></span> Taxi Alicante - Independent Web<br>
         <a href="legal_en.html" style="color: #999; text-decoration: none; border-bottom: 1px solid #ccc;">Legal Notice & Privacy</a>
     </div>
 </div>

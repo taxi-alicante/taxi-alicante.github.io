@@ -146,7 +146,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/site.webmanifest');
+        navigator.serviceWorker.register('/sw.js', { scope: '/' });
     }
 </script>
 

@@ -38,21 +38,20 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-// FETCH
+// FETCH (Versión idéntica a la de métodos de pago)
 self.addEventListener('fetch', event => {
   const request = event.request;
-
   if (request.method !== 'GET') return;
 
   event.respondWith(
     caches.match(request).then(cachedResponse => {
-
       const fetchPromise = fetch(request)
         .then(networkResponse => {
-          if (networkResponse && networkResponse.status === 200) {
+          // Solo guardamos en caché si la respuesta es válida y no es un error tipo 404/500
+          if (networkResponse && networkResponse.ok) {
             const responseToCache = networkResponse.clone();
             caches.open(CACHE_NAME).then(cache => {
-              cache.put(request, networkResponse.clone());            
+              cache.put(request, responseToCache);
             });
           }
           return networkResponse;

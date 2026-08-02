@@ -1,69 +1,74 @@
-const CACHE_NAME = 'taxi-alicante-root-v1';
+const CACHE_NAME = 'taxi-alicante-v2';
 
-const urlsToCache = [
+// Lista completa y unificada de archivos que la web guardará para uso offline
+const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
-  '/en.html',
-  '/site.webmanifest',
-  '/android-chrome-192x192.png',
-  '/android-chrome-512x512.png',
-  '/apple-touch-icon.png',
-  '/favicon.ico',
-  '/favicon-32x32.png',
-  '/favicon-16x16.png'
+  '/index-en.html',
+  '/legal.html',
+  '/legal-en.html',
+  '/contacto/index.html',
+  '/contacto/index-en.html',
+  '/metodos-de-pago/index.html',
+  '/metodos-de-pago/index-en.html',
+  '/css/estilos.css',
+  '/js/main.js',
+  '/manifest.json',
+  '/img/favicon.ico',
+  '/img/favicon-16x16.png',
+  '/img/favicon-32x32.png',
+  '/img/apple-touch-icon.png',
+  '/img/android-chrome-192x192.png',
+  '/img/android-chrome-512x512.png'
 ];
 
-// INSTALACIÓN
-self.addEventListener('install', event => {
-  self.skipWaiting();
+// 1. INSTALACIÓN: Guardar los archivos principales en la memoria caché
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('[SW] Guardando recursos principales en caché...');
+      return cache.addAll(ASSETS_TO_CACHE);
+    }).then(() => self.skipWaiting())
   );
 });
 
-// ACTIVACIÓN Y LIMPIEZA
-self.addEventListener('activate', event => {
+// 2. ACTIVACIÓN: Limpiar cachés antiguas cuando actualizamos el sitio web
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then(names =>
-      Promise.all(
-        names.map(name => {
-          if (name !== CACHE_NAME) {
-            return caches.delete(name);
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            console.log('[SW] Borrando caché obsoleta:', cache);
+            return caches.delete(cache);
           }
         })
-      )
-    )
+      );
+    }).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
-// FETCH (Versión idéntica a la de métodos de pago)
-self.addEventListener('fetch', event => {
-  const request = event.request;
-  if (request.method !== 'GET') return;
+// 3. ESTRATEGIA DE INTERCEPTACIÓN (Fetch):
+// Busca primero en la red (Network First). Si no hay internet, sirve la versión guardada en caché.
+self.addEventListener('fetch', (event) => {
+  // Ignorar peticiones que no sean GET
+  if (event.request.method !== 'GET') return;
 
   event.respondWith(
-    caches.match(request).then(cachedResponse => {
-      const fetchPromise = fetch(request)
-        .then(networkResponse => {
-          // Solo guardamos en caché si la respuesta es válida y no es un error tipo 404/500
-          if (networkResponse && networkResponse.ok) {
-            const responseToCache = networkResponse.clone();
-            caches.open(CACHE_NAME).then(cache => {
-              cache.put(request, responseToCache);
-            });
-          }
-          return networkResponse;
-        })
-        .catch(() => {
-          if (request.mode === 'navigate') {
-            return caches.match('/index.html');
-          }
-          return cachedResponse;
-        });
-
-      return cachedResponse || fetchPromise;
-    })
+    fetch(event.request)
+      .then((response) => {
+        // Si la respuesta de red es válida, clonamos y actualizamos la caché en segundo plano
+        if (response && response.status === 200 && response.type === 'basic') {
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
+        }
+        return response;
+      })
+      .catch(() => {
+        // Si falla la red (offline), servimos el recurso desde la caché
+        return caches.match(event.request);
+      })
   );
 });

@@ -126,3 +126,197 @@ header {
     margin-top: 40px; 
     padding-bottom: 40px; 
 }
+
+/* ==========================================
+   SECCIÓN: MÉTODOS DE PAGO Y ACORDEONES
+   ========================================== */
+.bienvenida { 
+    text-align: left; 
+    background: #f0f4f8; 
+    padding: 20px; 
+    border-radius: 15px; 
+    margin-bottom: 25px; 
+    border: 1px solid #d1d9e0; 
+}
+
+.bienvenida h2 { 
+    font-size: 1.1rem; 
+    margin-top: 0; 
+    color: var(--azul); 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.item { 
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 12px; 
+    font-size: 0.95rem; 
+}
+
+.check { 
+    color: var(--azul); 
+    margin-right: 10px; 
+    font-weight: bold; 
+}
+
+/* Acordeón HTML <details> */
+details { 
+    margin-bottom: 12px; 
+    width: 100%; 
+    text-align: left; 
+}
+
+details summary { 
+    list-style: none; 
+    list-style-type: none; 
+}
+
+details summary::-webkit-details-marker { 
+    display: none; 
+}
+
+.btn-summary { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 16px; 
+    border-radius: 12px; 
+    font-weight: bold; 
+    color: white; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    cursor: pointer; 
+    user-select: none; 
+    transition: 0.2s; 
+}
+
+.btn-clasico { background: var(--azul); }
+.btn-bitcoin { background: var(--btc); }
+
+.seccion-titulo { 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    color: #888; 
+    margin: 25px 0 8px 0; 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    text-align: center; 
+}
+
+.info-desplegada { 
+    background: #f9f9f9; 
+    padding: 20px; 
+    border-radius: 0 0 12px 12px; 
+    border: 1px solid #eee; 
+    border-top: none; 
+    margin-top: -4px; 
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); 
+    font-size: 0.95rem; 
+}
+
+.info-desplegada p { margin: 0 0 12px 0; }
+.info-desplegada ul { margin: 0; padding-left: 20px; }
+.info-desplegada li { margin-bottom: 8px; }
+
+.subtitulo-cripto { 
+    font-weight: bold; 
+    color: var(--btc); 
+    margin-top: 15px; 
+    display: block; 
+    text-transform: uppercase; 
+    font-size: 0.85rem; 
+    letter-spacing: 0.5px; 
+}
+
+.wallet-tag { 
+    display: inline-block; 
+    background: #e2e8f0; 
+    color: #4a5568; 
+    padding: 3px 8px; 
+    border-radius: 6px; 
+    font-size: 0.8rem; 
+    font-weight: bold; 
+    margin-right: 4px; 
+    margin-top: 5px; 
+}
+
+.btn-volver-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    margin-top: 25px;
+    background-color: #fffbe6;
+    color: #735100;
+    border: 1px solid #ffe58f;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    transition: all 0.2s ease;
+}
+
+.btn-volver-menu:active {
+    background-color: #fff1b8;
+    transform: scale(0.98);
+}
+
+/* Botón flotante para volver arriba */
+#btn-subir {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--azul);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    border: 2px solid white;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+#btn-subir.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Bloque Whitepaper Bitcoin */
+.whitepaper-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.btn-wp-single {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7fafc;
+    color: #2d3748;
+    border: 1px solid #cbd5e0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+}
+
+.btn-wp-single:active {
+    background: #edf2f7;
+    transform: scale(0.98);
+}

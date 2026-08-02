@@ -3,158 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta name="theme-color" content="#0056b3">
     <meta name="description" content="Payment options available for your Taxi trip in Alicante. Information about traditional methods and Bitcoin payment (Lightning and On-Chain).">
     <title>Payment Methods - Taxi Alicante</title>
+
+    <!-- Estilos unificados -->
+    <link rel="stylesheet" href="/css/estilos.css">
     
-    <!-- ICONOS Y FAVICONS -->
-    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
-    
-    <style>
-        :root { 
-            --azul: #0056b3; 
-            --verde: #25D366; 
-            --negro: #222; 
-            --amarillo: #ffcc00; 
-            --btc: #F7931A; 
-        }
-        html { scroll-behavior: smooth; }
-        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; text-align: center; background: #ffffff; color: #333; line-height: 1.5; }
-        header { background: var(--azul); color: white; padding: 2.5rem 1rem; border-bottom: 6px solid var(--amarillo); position: relative; }
-        .container { padding: 20px; max-width: 450px; margin: auto; }
-        
-        .bienvenida { text-align: left; background: #f0f4f8; padding: 20px; border-radius: 15px; margin-bottom: 25px; border: 1px solid #d1d9e0; }
-        .bienvenida h2 { font-size: 1.1rem; margin-top: 0; color: var(--azul); text-transform: uppercase; letter-spacing: 1px; }
-        .item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 0.95rem; }
-        .check { color: var(--azul); margin-right: 10px; font-weight: bold; }
+    <!-- Iconos y Favicons desde /img/ -->
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
 
-        details { margin-bottom: 12px; width: 100%; text-align: left; }
-        details summary { list-style: none; list-style-type: none; }
-        details summary::-webkit-details-marker { display: none; }
-
-        .btn-summary { display: flex; align-items: center; justify-content: center; padding: 16px; border-radius: 12px; font-weight: bold; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; user-select: none; transition: 0.2s; }
-        .btn-clasico { background: var(--azul); }
-        .btn-bitcoin { background: var(--btc); }
-        
-        .icono { margin-right: 10px; font-size: 1.3rem; }
-        .seccion-titulo { font-size: 0.8rem; text-transform: uppercase; color: #888; margin: 25px 0 8px 0; font-weight: bold; letter-spacing: 1px; text-align: center; }
-
-        .info-desplegada { background: #f9f9f9; padding: 20px; border-radius: 0 0 12px 12px; border: 1px solid #eee; border-top: none; margin-top: -4px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); font-size: 0.95rem; }
-        .info-desplegada p { margin: 0 0 12px 0; }
-        .info-desplegada ul { margin: 0; padding-left: 20px; }
-        .info-desplegada li { margin-bottom: 8px; }
-        
-        .subtitulo-cripto { font-weight: bold; color: var(--btc); margin-top: 15px; display: block; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
-        .wallet-tag { display: inline-block; background: #e2e8f0; color: #4a5568; padding: 3px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; margin-right: 4px; margin-top: 5px; }
-
-        .btn-volver { display: flex; align-items: center; justify-content: center; padding: 16px; border-radius: 12px; text-decoration: none; font-weight: bold; color: #444; background: #eee; border: 1px solid #ccc; font-size: 0.9rem; margin-top: 30px; box-shadow: none; }
-
-        .footer { font-size: 0.7rem; color: #999; margin-top: 40px; padding-bottom: 80px; text-align: center; }
-
-        .idioma-float {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px 10px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            line-height: 1;
-        }
-
-        .btn-volver-menu {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px;
-            margin-top: 25px;
-            background-color: #fffbe6;
-            color: #735100;
-            border: 1px solid #ffe58f;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            transition: all 0.2s ease;
-        }
-        
-        .btn-volver-menu:active {
-            background-color: #fff1b8;
-            transform: scale(0.98);
-        }
-
-        #btn-subir {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: var(--azul);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 100;
-            border: 2px solid white;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.3s;
-        }
-
-        #btn-subir.mostrar {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Bloque Whitepaper Bitcoin */
-        .whitepaper-box {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 12px;
-            margin-top: 20px;
-            text-align: left;
-        }
-        .btn-wp-single {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f7fafc;
-            color: #2d3748;
-            border: 1px solid #cbd5e0;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            margin-top: 8px;
-        }
-        .btn-wp-single:active {
-            background: #edf2f7;
-            transform: scale(0.98);
-        }
-        
-    </style>
+    <!-- JS Principal -->
+    <script src="/js/main.js" defer></script>
 </head>
 <body>
 
 <header id="inicio">
-    <a href="index.html" class="idioma-float" title="Cambiar a Español">🇪🇸</a>
+    <a href="/metodos-de-pago/index.html" class="idioma-float" title="Cambiar a Español">🇪🇸</a>
     <div style="font-size: 3rem; margin-bottom: 0.5rem;">💳</div>
     <h1>Payment Methods</h1>
     <p>Choose your preferred payment option for the trip</p>
@@ -200,8 +69,9 @@
             <p><b>Lightning Network</b> remains the preferred payment method. However, due to the longer duration of these journeys, <b>Bitcoin On-Chain (Main Network)</b> payments are also accepted at the start of the trip, based on an estimated fare calculated according to the official tariff.</p>
             
             <p>Upon arrival, the final fare will be based on the <b>taximeter</b>. Any difference will be settled immediately using <b>Lightning Network</b> or cash.</p>
+            
             <a href="https://herramienta-sats-b9f04b.gitlab.io/?lang=en" target="_blank" style="display: flex; align-items: center; justify-content: center; padding: 14px; border-radius: 10px; font-weight: bold; color: white; background: var(--btc); text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 15px 0 20px 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">
-    📊 Price Estimator (Sats)
+                📊 Price Estimator (Sats)
             </a>
             
             <p style="margin-top: 15px; margin-bottom: 5px;"><b>Recommended Wallets:</b></p>
@@ -211,50 +81,31 @@
             <span class="wallet-tag">Blink</span>
         </div>
 
-        <!-- WHITEPAPER RESOURCE (ENGLISH) -->
+        <!-- WHITEPAPER RESOURCE DESDE /docs/ -->
         <div class="whitepaper-box">
             <span class="subtitulo-cripto" style="margin-top: 0;">📜 Official Documentation</span>
             <p style="font-size: 0.85rem; color: #666; margin: 5px 0 0 0;">
                 Original technical paper by Satoshi Nakamoto:
             </p>
-            <a href="bitcoin_en.pdf" download class="btn-wp-single">
+            <a href="/docs/bitcoin_en.pdf" download class="btn-wp-single">
                 📄 Download Bitcoin Whitepaper (PDF)
             </a>
         </div>
-        
     </details>
 
-    <!-- BOTÓN DE VOLVER AL MENÚ PRINCIPAL (INGLÉS) -->
-    <a href="https://taxi-alicante.github.io/en.html" class="btn-volver-menu">
+    <!-- BOTÓN DE VOLVER AL MENÚ PRINCIPAL -->
+    <a href="/index-en.html" class="btn-volver-menu">
         <span class="icono">🏠</span> BACK TO MAIN MENU
     </a>
 
     <div class="footer">
         © <span id="year"></span> Taxi Alicante - Independent Website<br>
-        <a href="legal_en.html" style="color: #999; text-decoration: none; border-bottom: 1px solid #ccc;">Legal Notice and Privacy</a>
+        <a href="/legal.html" style="color: #999; text-decoration: none; border-bottom: 1px solid #ccc;">Legal Notice and Privacy</a>
     </div>
 </div>
 
 <!-- SCROLL TO TOP BUTTON -->
 <a href="#inicio" id="btn-subir" title="Scroll to top">↑</a>
-
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const btnSubir = document.getElementById('btn-subir');
-
-    window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            btnSubir.classList.add('mostrar');
-        } else {
-            btnSubir.classList.remove('mostrar');
-        }
-    };
-
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js');
-    }
-</script>
 
 </body>
 </html>

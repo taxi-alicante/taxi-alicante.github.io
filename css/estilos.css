@@ -336,19 +336,48 @@ details summary::-webkit-details-marker {
 .ventajas h2 { 
     font-size: 1.1rem; 
     margin-top: 0; 
-    color: var(--azul); 
+    color: var(--azul, #0056b3); 
     text-transform: uppercase; 
     letter-spacing: 1px; 
 }
 
-.btn-tel { background: var(--azul); }
-.btn-ws { background: var(--verde); }
-.btn-app { background: var(--negro); font-size: 0.85rem; }
-.btn-web { background: #fff; color: var(--azul); border: 2px solid var(--azul); box-shadow: none; margin-top: 20px; }
+/* Estilo base compartido para dar forma, relleno y SEPARACIÓN a todos los botones */
+.btn-tel, .btn-ws, .btn-app, .btn-web, .btn-vcard, .btn-pdf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 12px; /* <-- Separa los botones verticalmente */
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-tel:hover, .btn-ws:hover, .btn-app:hover, .btn-web:hover, .btn-vcard:hover, .btn-pdf:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+}
+
+/* Modificadores de color e individuales */
+.btn-tel { background: var(--azul, #0056b3); }
+.btn-ws { background: var(--verde, #25d366); }
+.btn-app { background: var(--negro, #222222); font-size: 0.85rem; }
+.btn-web { background: #fff; color: var(--azul, #0056b3); border: 2px solid var(--azul, #0056b3); box-shadow: none; margin-top: 20px; }
 .btn-vcard { background: #eee; color: #444; box-shadow: none; border: 1px solid #ccc; font-size: 0.9rem; margin-top: 10px; }
 .btn-pdf { background: #6c757d; color: white; margin-top: 10px; font-size: 0.9rem; }
 .btn-pdf .icono { font-size: 1.3rem; }
 
+/* Distribución en rejilla para Android / iPhone */
 .app-grid { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 

@@ -19,7 +19,12 @@ const ASSETS_TO_CACHE = [
   '/img/favicon-32x32.png',
   '/img/apple-touch-icon.png',
   '/img/android-chrome-192x192.png',
-  '/img/android-chrome-512x512.png'
+  '/img/android-chrome-512x512.png',
+  '/vcard/radioteletaxi.vcf',
+  '/vcard/radioteletaxi_en.vcf',
+  '/docs/bitcoin_es.pdf',
+  '/docs/bitcoin_en.pdf',
+  '/docs/tarifas-oficiales-alicante.pdf'
 ];
 
 // 1. INSTALACIÓN: Guardar los archivos principales en la memoria caché

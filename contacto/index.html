@@ -3,106 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta name="theme-color" content="#0056b3">
     <meta name="description" content="Servicio Oficial de Taxi en Alicante. Reserva directa por WhatsApp o Teléfono 24h. Consulta las tarifas oficiales vigentes.">
-    <title>Servicio de Taxi en Alicante</title>
-    <style>
-        :root { --azul: #0056b3; --verde: #25D366; --negro: #222; --amarillo: #ffcc00; }
-        html { scroll-behavior: smooth; }
-        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; text-align: center; background: #ffffff; color: #333; line-height: 1.5; }
-        header { background: var(--azul); color: white; padding: 2.5rem 1rem; border-bottom: 6px solid var(--amarillo); position: relative; }
-        .container { padding: 20px; max-width: 450px; margin: auto; }
-        
-        .ventajas { text-align: left; background: #f0f4f8; padding: 20px; border-radius: 15px; margin-bottom: 25px; border: 1px solid #d1d9e0; }
-        .ventajas h2 { font-size: 1.1rem; margin-top: 0; color: var(--azul); text-transform: uppercase; letter-spacing: 1px; }
-        .item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 0.95rem; }
-        .check { color: var(--azul); margin-right: 10px; font-weight: bold; }
+    <title>Servicio de Taxi en Alicante - Contacto</title>
 
-        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; margin-bottom: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.2s; }
-        .btn-tel { background: var(--azul); }
-        .btn-ws { background: var(--verde); }
-        .btn-app { background: var(--negro); font-size: 0.85rem; }
-        .btn-web { background: #fff; color: var(--azul); border: 2px solid var(--azul); box-shadow: none; margin-top: 20px; }
-        .btn-vcard { background: #eee; color: #444; box-shadow: none; border: 1px solid #ccc; font-size: 0.9rem; margin-top: 10px; }
-        .btn-pdf { background: #6c757d; color: white; margin-top: 10px; font-size: 0.9rem; }
-        .btn-pdf .icono { font-size: 1.3rem; }
-        .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .icono { margin-right: 10px; font-size: 1.3rem; }
-        .seccion-titulo { font-size: 0.8rem; text-transform: uppercase; color: #888; margin: 15px 0 8px 0; font-weight: bold; letter-spacing: 1px; }
+    <!-- Estilos unificados -->
+    <link rel="stylesheet" href="/css/estilos.css">
 
-        #btn-subir {
-            position: fixed; bottom: 25px; right: 25px; background: var(--azul); color: white;
-            width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; text-decoration: none; font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 100; border: 2px solid white;
-            opacity: 0; visibility: hidden; transition: 0.3s;
-        }
+    <!-- Iconos y Favicons desde /img/ -->
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
 
-        #btn-subir.mostrar { opacity: 1; visibility: visible; }
-
-        .footer { font-size: 0.7rem; color: #999; margin-top: 40px; padding-bottom: 80px; }
-
-        .idioma-float {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px 10px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            line-height: 1;
-        }
-
-        .btn-volver-menu {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px;
-            margin-top: 25px;
-            background-color: #fffbe6;
-            color: #735100;
-            border: 1px solid #ffe58f;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            transition: all 0.2s ease;
-        }
-        
-        .btn-volver-menu:active {
-            background-color: #fff1b8;
-            transform: scale(0.98);
-        }
-        
-    </style>
-
-    <link rel="icon" type="image/png" sizes="512x512" href="/contacto/android-chrome-512x512.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/contacto/android-chrome-192x192.png">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/contacto/apple-touch-icon.png">
-
-    <link rel="icon" href="/contacto/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="/contacto/favicon-32x32.png">
-
-    <link rel="icon" type="image/png" sizes="16x16" href="/contacto/favicon-16x16.png">
-
-    <link rel="manifest" href="/contacto/site.webmanifest">
-
-    <!-- Ajustes visuales de PWA para Android y Apple -->
-    <meta name="theme-color" content="#0056b3">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+    <!-- JS Principal -->
+    <script src="/js/main.js" defer></script>
 </head>
 <body>
 
-<header id="inicio" style="position: relative;">
-    <a href="en.html" class="idioma-float" title="Switch to English">🇬🇧</a>
-    <div style="font-size: 3rem;">🚕</div>
+<header id="inicio">
+    <a href="/contacto/index-en.html" class="idioma-float" title="Switch to English">🇬🇧</a>
+    <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚕</div>
     <h1>Taxi en Alicante</h1>
     <p>Garantía, Seguridad y Profesionalidad</p>
 </header>
@@ -120,16 +42,16 @@
         <span class="icono">📞</span> LLAMAR AL 965 252 511
     </a>
 
-    <a href="https://wa.me/34965252511?text=Hola,%20necesito%20un%20taxi" class="btn btn-ws">
+    <a href="https://wa.me/34965252511?text=Hola,%20necesito%20un%20taxi" class="btn btn-ws" target="_blank">
         <span class="icono">💬</span> PEDIR POR WHATSAPP
     </a>
 
     <div class="seccion-titulo">App Pidetaxi</div>
     <div class="app-grid">
-        <a href="https://play.google.com/store/apps/details?id=es.sooft.pidetaxi&hl=es" class="btn btn-app">
+        <a href="https://play.google.com/store/apps/details?id=es.sooft.pidetaxi&hl=es" class="btn btn-app" target="_blank">
             <span class="icono">🤖</span> ANDROID
         </a>
-        <a href="https://apps.apple.com/es/app/pidetaxi-pedir-taxi-en-espa%C3%B1a/id737441460" class="btn btn-app">
+        <a href="https://apps.apple.com/es/app/pidetaxi-pedir-taxi-en-espa%C3%B1a/id737441460" class="btn btn-app" target="_blank">
             <span class="icono">🍎</span> IPHONE
         </a>
     </div>
@@ -139,50 +61,28 @@
         <span class="icono">🌐</span> WEB OFICIAL (Paradas y Servicios)
     </a>
 
-    <a href="/contacto/radioteletaxi.vcf" class="btn btn-vcard">
+    <!-- Asumiendo que guardaremos los vCard en /vcard/ o mantendremos /vcard/radioteletaxi.vcf -->
+    <a href="/vcard/radioteletaxi.vcf" class="btn btn-vcard" download>
         <span class="icono">👤</span> GUARDAR EN CONTACTOS
     </a>
 
-    <a href="/contacto/tarifas-oficiales-alicante.pdf" download class="btn btn-pdf">
+    <a href="/docs/tarifas-oficiales-alicante.pdf" download class="btn btn-pdf">
         <span class="icono">📄</span> DESCARGAR TARIFAS OFICIALES (PDF)
     </a>
 
-    <!-- BOTÓN NAVEGACIÓN A MENÚ PRINCIPAL -->
-    <a href="https://taxi-alicante.github.io/" class="btn-volver-menu">
+    <!-- BOTÓN DE VOLVER AL MENÚ PRINCIPAL -->
+    <a href="/index.html" class="btn-volver-menu">
         <span class="icono">🏠</span> VOLVER AL MENÚ PRINCIPAL
     </a>
     
     <div class="footer">
         © <span id="year"></span> Taxi Alicante - Web Independiente<br>
-        <a href="legal.html" style="color: #999; text-decoration: none; border-bottom: 1px solid #ccc;">Aviso Legal y Privacidad</a>
+        <a href="/legal.html" style="color: #999; text-decoration: none; border-bottom: 1px solid #ccc;">Aviso Legal y Privacidad</a>
     </div>
 </div>
 
+<!-- BOTÓN DE SUBIR -->
 <a href="#inicio" id="btn-subir" title="Subir">↑</a>
-
-<script>
-    const btnSubir = document.getElementById("btn-subir");
-
-    // Función para el botón de subir
-    window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            btnSubir.classList.add("mostrar");
-        } else {
-            btnSubir.classList.remove("mostrar");
-        }
-    };
-
-    // Función para poner el año actual automáticamente
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/contacto/service-worker.js', { scope: '/contacto/' })
-                .then(reg => console.log('Service Worker registrado:', reg.scope))
-                .catch(err => console.error('Error al registrar Service Worker:', err));
-        });
-    }
-</script>
 
 </body>
 </html>

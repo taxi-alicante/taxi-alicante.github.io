@@ -320,3 +320,65 @@ details summary::-webkit-details-marker {
     background: #edf2f7;
     transform: scale(0.98);
 }
+
+/* ==========================================
+   SECCIÓN: CONTACTO Y RESERVAS
+   ========================================== */
+.ventajas { 
+    text-align: left; 
+    background: #f0f4f8; 
+    padding: 20px; 
+    border-radius: 15px; 
+    margin-bottom: 25px; 
+    border: 1px solid #d1d9e0; 
+}
+
+.ventajas h2 { 
+    font-size: 1.1rem; 
+    margin-top: 0; 
+    color: var(--azul); 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.btn-tel { background: var(--azul); }
+.btn-ws { background: var(--verde); }
+.btn-app { background: var(--negro); font-size: 0.85rem; }
+.btn-web { background: #fff; color: var(--azul); border: 2px solid var(--azul); box-shadow: none; margin-top: 20px; }
+.btn-vcard { background: #eee; color: #444; box-shadow: none; border: 1px solid #ccc; font-size: 0.9rem; margin-top: 10px; }
+.btn-pdf { background: #6c757d; color: white; margin-top: 10px; font-size: 0.9rem; }
+.btn-pdf .icono { font-size: 1.3rem; }
+
+.app-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+}
+
+/* ==========================================
+   SECCIÓN: AVISO LEGAL Y PRIVACIDAD
+   ========================================== */
+.container-legal {
+    padding: 20px;
+    max-width: 650px;
+    margin: auto;
+    text-align: left;
+}
+
+.container-legal h2 {
+    color: var(--azul);
+    font-size: 1.15rem;
+    margin-top: 1.8rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.container-legal p, 
+.container-legal li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.container-legal ul {
+    padding-left: 20px;
+}

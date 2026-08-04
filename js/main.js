@@ -30,3 +30,19 @@ if ('serviceWorker' in navigator) {
             .catch(err => console.error('Error al registrar SW Raíz:', err));
     });
 }
+
+// 4. Botón Volver Atrás
+document.addEventListener('DOMContentLoaded', () => {
+  const btnVolver = document.getElementById('btn-volver');
+  
+  if (btnVolver) {
+    btnVolver.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = 'index.html';
+      }
+    });
+  }
+});

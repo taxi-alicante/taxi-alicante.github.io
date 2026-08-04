@@ -125,6 +125,7 @@ header {
     color: #999; 
     margin-top: 40px; 
     padding-bottom: 40px; 
+    text-align: center;
 }
 
 /* ==========================================
@@ -300,6 +301,10 @@ details summary::-webkit-details-marker {
     text-align: left;
 }
 
+.whitepaper-box .subtitulo-cripto:first-child {
+    margin-top: 0;
+}
+
 .btn-wp-single {
     display: flex;
     align-items: center;
@@ -319,6 +324,28 @@ details summary::-webkit-details-marker {
 .btn-wp-single:active {
     background: #edf2f7;
     transform: scale(0.98);
+}
+
+.btn-sats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    background: var(--btc);
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 15px 0 20px 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lista-titulo {
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 /* ==========================================
@@ -410,4 +437,24 @@ details summary::-webkit-details-marker {
 
 .container-legal ul {
     padding-left: 20px;
+}
+
+.btn-volver { 
+  display: inline-block; 
+  margin-top: 2rem; 
+  color: #0056b3; 
+  text-decoration: none; 
+  font-weight: bold; 
+  border-bottom: 2px solid #0056b3; 
+}
+
+.enlace-footer {
+    color: #999;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-icono {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
 }
